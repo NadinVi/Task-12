@@ -65,13 +65,13 @@ function Cars(carMake, model, yearOfRegistr, numberPlate) {
     this.yearOfRegistr = yearOfRegistr;
     this.numberPlate = numberPlate;
 
-    this.ownerOfCar = function(owner) {
-        if (owner.age >= 18) {
-            this.owner = owner;
-        } else {
-            console.log(`${owner.name} not yet 18!`)
-        }
-    }
+    // this.ownerOfCar = function(owner) {
+    //     if (owner.age >= 18) {
+    //         this.owner = owner;
+    //     } else {
+    //         console.log(`${owner.name} not yet 18!`)
+    //     }
+    // }
 
 }
 
@@ -79,13 +79,13 @@ Cars.prototype.infoAuto = function() {
     return `Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}. Owner of te car ${this.ownerOfCar}`
 };
 
-// Cars.prototype.ownerOfCar = function(owner) {
-//     if (owner.age >= 18) {
-//         this.owner = owner;
-//     } else {
-//         console.log(`${owner.name} not yet 18!`)
-//     }
-// };
+Cars.prototype.ownerOfCar = function(owner) {
+    if (owner.age >= 18) {
+        this.owner = owner;
+    } else {
+        console.log(`${owner.name} not yet 18!`)
+    }
+};
 
 
 
@@ -118,7 +118,7 @@ cars
     .forEach(function (car) {
         //console.log(car);
         console.log(car.infoAuto());
-        console.log(car.ownerOfCar())
+        //console.log(car.ownerOfCar())
     })
 
 

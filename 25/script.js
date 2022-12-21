@@ -30,7 +30,7 @@ function Parent(name, age) {
 
 
 Parent.prototype.getInfo = function () {
-    return `My name is ${this.name}. I'm ${this.age} year's old.`
+    return `Name of owner ${this.name}. Age: ${this.age}.`
 };
 
 
@@ -76,18 +76,16 @@ function Cars(carMake, model, yearOfRegistr, numberPlate) {
 }
 
 Cars.prototype.infoAuto = function() {
-    return `Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}. Owner of te car ${this.ownerOfCar}`
+    return `Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}. Owner of te car  ${this.owner}`
 };
 
 Cars.prototype.ownerOfCar = function(owner) {
     if (owner.age >= 18) {
-        this.owner = owner;
+        this.owner = owners;
     } else {
         console.log(`${owner.name} not yet 18!`)
     }
 };
-
-
 
 
 const cars = [

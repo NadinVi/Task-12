@@ -86,13 +86,7 @@ Cars.prototype.infoAuto = function() {
 //         console.log(`${owner.name} not yet 18!`)
 //     }
 // };
-// Cars.prototype.infoAuto = function () {
-//     if (this.owners.age >= 18) {
-//     return `Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}. Owner is ${this.owner.getInfo()}`
-// } else {
-// return `Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}. Not owner of this car`
-// }
-// };
+
 
 
 

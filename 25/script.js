@@ -43,7 +43,7 @@ function Cars(carMake, model, yearOfRegistr, numberPlate) {
 
 Cars.prototype.ownerOfCar = function(owner) {
     if(owner.age >= 18) {
-        this.owner = owner;
+       return this.owner = owner;
     } else {
         console.log(`${owner.name} you are not yet 18 years old`)
     }

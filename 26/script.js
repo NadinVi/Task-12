@@ -76,7 +76,6 @@ let cosmeticsProducts = [
 	}
 ];
 
-
 function Product(category, type, price) {
 	this.category = category;
 	this.type = type;
@@ -112,6 +111,6 @@ document.write(`
 				<th>Price</th>
 			</tr>
 		</thead>
-		<tbody>${renderProd('kitchen', kitchenProducts)}, ${renderProd('devices', devicesProducts)}, ${renderProd('cosmetics', cosmeticsProducts)} </tbody>
+		<tbody>${renderProd('kitchen', kitchenProducts)} ${renderProd('devices', devicesProducts)} ${renderProd('cosmetics', cosmeticsProducts)} </tbody>
 	</table>
 `)

@@ -30,94 +30,48 @@ function Parent(name, age) {
 
 
 Parent.prototype.getInfo = function () {
-    return `Name of owner ${this.name}. Age: ${this.age}.`
+    console.log(`Name of owner ${this.name}. Age: ${this.age}.`)
 };
-
-
-const owners = [
-    {
-        name: "Nadiia",
-        age: 36,
-    },
-    {
-        name: "Tatyana",
-        age: 17,
-    },
-    {
-        name: "Serhii",
-        age: 30,
-    }
-];
-
-owners
-    .map(function (owner) {
-        return new Parent(owner.name, owner.age);
-    })
-    .forEach(function (owner) {
-        //console.log(owner);
-        console.log(owner.getInfo());
-    });
 
 
 function Cars(carMake, model, yearOfRegistr, numberPlate) {
     this.carMake = carMake;
     this.model = model;
-    this.yearOfRegistr = yearOfRegistr;
+    this.yearOfRegistr = yearOfRegistr; 
     this.numberPlate = numberPlate;
-
-    // this.ownerOfCar = function(owner) {
-    //     if (owner.age >= 18) {
-    //         this.owner = owner;
-    //     } else {
-    //         console.log(`${owner.name} not yet 18!`)
-    //     }
-    // }
-
 }
 
-Cars.prototype.infoAuto = function() {
-    return `Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}. Owner of te car  ${this.owner}`
-};
-
 Cars.prototype.ownerOfCar = function(owner) {
-    if (owner.age >= 18) {
-        this.owner = owners;
+    if(owner.age >= 18) {
+        this.owner = owner;
     } else {
-        console.log(`${owner.name} not yet 18!`)
+        console.log(`${owner.name} you are not yet 18 years old`)
     }
 };
 
+Cars.prototype.infoAuto = function() {
+        console.log(`Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}.`);
+    if(this.owner) {
+        this.owner.getInfo();
+    } else
+        console.log(`Not owner`);
+      
+}
 
-const cars = [
-    {
-        carMake: "Hyundai",
-        model: "Tucson",
-        yearOfRegistr: 2020,
-        numberPlate: "KA3325SV",
-    },
-    {
-        carMake: "JAGUAR",
-        model: "XF",
-        yearOfRegistr: 2022,
-        numberPlate: "KI3578VA",
-    },
-    {
-        carMake: "Nissan",
-        model: "X-Trail",
-        yearOfRegistr: 2018,
-        numberPlate: "VO7733VA",
-    }
-]
+const humanFirst = new Parent("Nadiia", 36);
+//humanFirst.getInfo();
+const carFirst = new Cars("Hyundai", "Tucson", 2020, "KA3325SV");
+carFirst.ownerOfCar(humanFirst);
+carFirst.infoAuto();
 
-cars
-    .map(function (car) {
-        return new Cars(car.carMake, car.model, car.yearOfRegistr, car.numberPlate);
-    })
-    .forEach(function (car) {
-        //console.log(car);
-        console.log(car.infoAuto());
-        //console.log(car.ownerOfCar())
-    })
+const humanSecond = new Parent("Tatyana", 17);
+//humanSecond.getInfo();
+const carSecond = new Cars("JAGUAR", "XF", 2022, "KI3578VA");
+carSecond.ownerOfCar(humanSecond);
+carSecond.infoAuto();
 
-
-
+const humanThird = new Parent("Serhii", 30);
+//humanThird.getInfo();
+const carThird = new Cars("Nissan", "X-Trail", 2018, "VO7733VA");
+carThird.ownerOfCar(humanThird);
+carThird.infoAuto();

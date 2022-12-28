@@ -54,9 +54,8 @@ Cars.prototype.infoAuto = function() {
     if(this.owner) {
         this.owner.getInfo();
     } else
-        console.log(`Not owner`);
-      
-}
+        console.log(`Not owner`);   
+};
 
 const humanFirst = new Parent("Nadiia", 36);
 //humanFirst.getInfo();

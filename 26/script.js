@@ -84,33 +84,21 @@ function Product(category, type, price) {
 
 Product.prototype.render = function () {
 	return `<tr>
-        <td><img src="images/${this.category}/${this.type}.svg" alt="${this.type}" width="50" height="50"></td>
-        <td>${this.type}</td>
-        <td>${this.prise}</td>
-    </tr>`
+	<td><img src="images/${this.category}/${this.type}.svg" alt="${this.type}" width="50" height="50"></td>
+	<td>${this.type}</td>
+	<td>${this.price}</td>
+	</tr>`
 }
 
-function renderProd(category, arrProduct) {
-	let prod = arrProduct
-		.map(function (product) {
-			return new Product(category, product.type, product.price)
-		})
-		.map(function (product) {
-			return product.render()
-		})
-		.join('');
-	return prod;
-}
-
-document.write(`
-	<table>
-		<thead>
-			<tr>
-				<th>Image</th>
-				<th>Name</th>
-				<th>Price</th>
-			</tr>
-		</thead>
-		<tbody>${renderProd('kitchen', kitchenProducts)} ${renderProd('devices', devicesProducts)} ${renderProd('cosmetics', cosmeticsProducts)} </tbody>
-	</table>
+document.write(`<table>
+						<thead>
+								<tr>
+									<th>Image</th>
+									<th>Name</th>
+									<th>Price</th>
+								</tr>
+						</thead>
+						<tbody>  </tbody>
+				</table>
 `)
+

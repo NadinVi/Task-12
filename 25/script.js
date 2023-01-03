@@ -45,16 +45,17 @@ Cars.prototype.ownerOfCar = function(owner) {
     if(owner.age >= 18) {
        return this.owner = owner;
     } else {
-        console.log(`${owner.name} you are not yet 18 years old`)
+        return `${owner.name} you are not yet 18 years old`
     }
 };
 
 Cars.prototype.infoAuto = function() {
         console.log(`Auto ${this.carMake} model ${this.model}, ${this.yearOfRegistr} year of registration. Number plate ${this.numberPlate}.`);
     if(this.owner) {
-        this.owner.getInfo();
-    } else
-        console.log(`Not owner`);   
+       return this.owner.getInfo();
+    } else {
+       console.log (`Not owner`);
+    }  
 };
 
 const humanFirst = new Parent("Nadiia", 36);

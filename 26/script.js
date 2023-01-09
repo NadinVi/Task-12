@@ -82,13 +82,26 @@ function Product(category, type, price) {
 	this.price = price;
 }
 
+const grater = new Product("kitchen", "grater", "10");
+const pastryBag = new Product("kitchen", "pastry-bag", "25");
+const scale = new Product("kitchen", "scale", "15");
+
 Product.prototype.render = function () {
 	return `<tr>
-	<td><img src="images/${this.category}/${this.type}.svg" alt="${this.type}" width="50" height="50"></td>
-	<td>${this.type}</td>
-	<td>${this.price}</td>
-	</tr>`
+		<td><img src="images//${this.category}/${this.type}.svg" alt="${this.type}" width="50" height="50"></td>
+		<td>${this.type}</td>
+		<td>${this.price}</td>
+		</tr>`
 }
+
+// function rendCategory(category, newArr) {
+// 	const Trs = newArr
+// 	.map(function(name) {
+// 		return new Product(category, name.type, name.price)
+// 	})	
+// return Trs;
+// }
+
 
 document.write(`<table>
 						<thead>
@@ -98,7 +111,9 @@ document.write(`<table>
 									<th>Price</th>
 								</tr>
 						</thead>
-						<tbody>  </tbody>
+						<tbody>${grater.render()}
+						${pastryBag.render()}
+						${scale.render()}
+						 </tbody>
 				</table>
 `)
-

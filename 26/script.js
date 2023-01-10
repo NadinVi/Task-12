@@ -82,9 +82,9 @@ function Product(category, type, price) {
 	this.price = price;
 }
 
-const grater = new Product("kitchen", "grater", "10");
-const pastryBag = new Product("kitchen", "pastry-bag", "25");
-const scale = new Product("kitchen", "scale", "15");
+// const grater = new Product("kitchen", "grater", "10");
+// const pastryBag = new Product("kitchen", "pastry-bag", "25");
+// const scale = new Product("kitchen", "scale", "15");
 
 Product.prototype.render = function () {
 	return `<tr>
@@ -94,14 +94,17 @@ Product.prototype.render = function () {
 		</tr>`
 }
 
-// function rendCategory(category, newArr) {
-// 	const Trs = newArr
-// 	.map(function(name) {
-// 		return new Product(category, name.type, name.price)
-// 	})	
-// return Trs;
-// }
-
+function rendCategory(category, newArr) {
+	const Trs = newArr
+		.map(function (item) {
+			return new Product(category, item.type, item.price);
+		})
+		.map(function (item) {
+			return item.render();
+		})
+		.join("");
+	return Trs;
+}
 
 document.write(`<table>
 						<thead>
@@ -111,9 +114,8 @@ document.write(`<table>
 									<th>Price</th>
 								</tr>
 						</thead>
-						<tbody>${grater.render()}
-						${pastryBag.render()}
-						${scale.render()}
+						<tbody>${rendCategory("kitchen", kitchenProducts)}
+						 
 						 </tbody>
 				</table>
 `)

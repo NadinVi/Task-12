@@ -115,7 +115,8 @@ document.write(`<table>
 								</tr>
 						</thead>
 						<tbody>${rendCategory("kitchen", kitchenProducts)}
-						 
+							${rendCategory("devices", devicesProducts)}
+							${rendCategory("cosmetics", cosmeticsProducts)}
 						 </tbody>
 				</table>
 `)
